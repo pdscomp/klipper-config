@@ -1,7 +1,8 @@
-cp printer.cfg ~/printer_data/config/
-#curl -X POST -H "Content-Type: application/json" -H "X-Api-Key":"abcdef" -d '{"command":"M117 hello world"}' http://localhost/api/printer/command
-#POST /printer/gcode/script?script=G28
-#curl -X POST -H "Content-Type: application/json" -d '{"script":"M117 hello world"}' http://localhost:7125/printer/gcode/script
+#!/bin/bash -x
+
+files=(printer.cfg KlipperScreen.conf)
+
+cp -f ${files[@]} ~/printer_data/config/
+
 curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' http://localhost:7125/printer/gcode/script
 echo
-#curl -X POST -H "Content-Type: application/json" -d '{"script":"M117 hello world"}' http://localhost:7125/printer/gcode/script
