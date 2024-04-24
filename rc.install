@@ -1,7 +1,15 @@
 #!/bin/bash -x
 
 #files=(printer.cfg meshBed.cfg KlipperScreen.conf)
-files=(printer.cfg KlipperScreen.conf moonraker.conf)
+#	printer.cfg KlipperScreen.conf moonraker.conf)
+files=(
+crowsnest.conf
+KlipperScreen.conf
+meshBed.cfg
+moonraker.conf
+octoapp.conf
+printer.cfg
+)
 
 cp -f ${files[@]} ~/printer_data/config/
 
