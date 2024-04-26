@@ -1,10 +1,9 @@
-#!/bin/bash -x
+#!/bin/bash
 
 . ./rc.env
 
-echo "Before:"
-git status
-cd $pdc
+cd $pdc &>/dev/null
 cp -f ${files[@]} $here
-echo "After:"
+cd - &>/dev/null
+echo "rc.grab results:"
 git status
