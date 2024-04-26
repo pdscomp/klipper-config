@@ -2,8 +2,9 @@
 
 . ./rc.env
 
+echo "Before:"
+git status
 cd $pdc
 cp -f ${files[@]} $here
-
-curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' $gcode
-echo
+echo "After:"
+git status
