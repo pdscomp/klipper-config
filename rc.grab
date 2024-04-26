@@ -1,0 +1,9 @@
+#!/bin/bash -x
+
+. ./rc.env
+
+cd $pdc
+cp -f ${files[@]} $here
+
+curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' $gcode
+echo

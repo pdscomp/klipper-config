@@ -1,17 +1,8 @@
 #!/bin/bash -x
 
-#files=(printer.cfg meshBed.cfg KlipperScreen.conf)
-#	printer.cfg KlipperScreen.conf moonraker.conf)
-files=(
-crowsnest.conf
-KlipperScreen.conf
-meshBed.cfg
-moonraker.conf
-octoapp.conf
-printer.cfg
-)
+. ./rc.env
 
-cp -f ${files[@]} ~/printer_data/config/
+cp -f ${files[@]} ${pdc}
 
-curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' http://localhost:7125/printer/gcode/script
+curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' ${gcode}
 echo
