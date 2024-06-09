@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash ./rc.gcode G28
