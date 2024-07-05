@@ -2,7 +2,7 @@
 
 . ./rc.env
 
-cp -f ${files[@]} ${pdc}
+cp -rf ${files[@]} ${pdc}
 
 curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' ${gcode}
 echo
