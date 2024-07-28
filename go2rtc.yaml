@@ -1,0 +1,6 @@
+streams:
+  c270_h264:
+    - ffmpeg:device?video=/dev/video0&input_format=yuyv422&video_size=1280x720#video=h264#hardware
+#  c270_mjpeg:
+#    - ffmpeg:device?video=/dev/video0&input_format=mjpeg&video_size=1280x720
+

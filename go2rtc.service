@@ -1,0 +1,12 @@
+[Unit]
+Description=go2rtc
+After=network.online.target
+Wants=network.online.target
+
+[Service]
+Type=simple
+User=paul
+ExecStart=/usr/local/bin/go2rtc -config /home/paul/printer_data/config/go2rtc.yaml
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo cp ./go2rtc.service /etc/systemd/system/go2rtc.service
+sudo systemctl enable go2rtc.service
+sudo systemctl start go2rtc
