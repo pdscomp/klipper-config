@@ -4,3 +4,11 @@ streams:
 #  c270_mjpeg:
 #    - ffmpeg:device?video=/dev/video0&input_format=mjpeg&video_size=1280x720
 
+api:
+  listen: ":1984"    # default ":1984", HTTP API port ("" - disabled)
+  #base_path: "/rtc"  # default "", API prefix for serve on suburl (/api => /rtc/api)
+  #static_dir: "www"  # default "", folder for static files (custom web interface)
+  origin: "*"        # default "", allow CORS requests (only * supported)
+
+webrtc:
+  listen: ":8555"  # address of your local server and port (TCP/UDP)
