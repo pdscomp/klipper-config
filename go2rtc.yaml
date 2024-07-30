@@ -1,6 +1,12 @@
 streams:
   logitech_c270:
-    - ffmpeg:device?video=/dev/video0&input_format=yuyv422&video_size=1280x720#video=h264#hardware
+    - ffmpeg:device?video=/dev/video0&input_format=mjpeg&video_size=1280x720
+    - ffmpeg:http://localhost:1984/api/stream.mjpeg?src=logitech_c270#video=h264#hardware
+    #- ffmpeg:device?video=/dev/video0&input_format=yuyv422&video_size=1280x720#video=h264#hardware
+    #- ffmpeg:logitech_c270#input_format=mjpeg#video_size=1280x720
+    #- ffmpeg:logitech_c270#video=mjpeg
+  #logitech_c270_mjpeg:
+  #  - ffmpeg:http://localhost:1984/api/stream.mp4?src=logitech_c270#vcodec=mjpeg#qscale=1
   #logitech_c270:
   #  - ffmpeg:device?video=/dev/video0&input_format=mjpeg&video_size=1280x720
 
@@ -12,3 +18,10 @@ api:
 
 webrtc:
   listen: ":8555"  # address of your local server and port (TCP/UDP)
+
+ffmpeg:
+  bin: ffmpeg  # path to ffmpeg binary
+  #h264: "-codec:v libx264 -g:v 30 -preset:v superfast -tune:v zerolatency -profile:v main -level:v 4.1"
+  #mycodec: "-any args that supported by ffmpeg..."
+  #myinput: "-fflags nobuffer -flags low_delay -timeout 5000000 -i {input}"
+  #myraw: "-ss 00:00:20"
