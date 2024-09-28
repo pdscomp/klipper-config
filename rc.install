@@ -5,5 +5,6 @@
 cp -rf ${files[@]} ${pdc}
 
 curl -X POST -H "Content-Type: application/json" -d '{"script":"RESTART"}' ${gcode}
-sudo systemctl restart go2rtc KlipperScreen
+#sudo systemctl restart go2rtc KlipperScreen
+sudo systemctl restart go2rtc
 echo
