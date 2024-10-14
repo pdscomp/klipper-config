@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+. ./rc.env
+
+cp -rf ${files[@]} ${pdc}
+
+curl -X POST -H "Content-Type: application/json" -d '{"script":"RELOAD_GCODE_MACROS"}' ${gcode}
+echo
