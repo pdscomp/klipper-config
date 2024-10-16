@@ -1,8 +1,0 @@
-#!/bin/bash -x
-
-. ./rc.env
-
-cp -rf ${files[@]} ${pdc}
-
-systemctl restart KlipperScreen.service
-echo
