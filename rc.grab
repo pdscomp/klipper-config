@@ -3,7 +3,7 @@
 . ./rc.env
 
 cd $pdc &>/dev/null
-cp -f ${files[@]} $here
+cp -rf ${files[@]} $here
 cd - &>/dev/null
 echo "rc.grab results:"
 git status
